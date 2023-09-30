@@ -6,11 +6,11 @@ import { useRegister } from "../hooks/useRegister";
 
 export const AuthRegister = () => {
 
-    const { registerData, handleChange, handleSubmitRegister } = useRegister();
+    const { handleChange, handleSubmitRegister } = useRegister();
 
     return (
         <main className="h-screen w-full grid grid-cols-2">
-            <div className="bg-indigo-500"></div>
+
             <div className="flex justify-center items-center">
                 <div className="w-[320px] space-y-3">
                     <Input name="name" placeholder="name" onChange={handleChange} />
@@ -19,6 +19,7 @@ export const AuthRegister = () => {
                     <Button onClick={handleSubmitRegister} color="primary">Register</Button>
                 </div>
             </div>
+            <div className="bg-indigo-500"></div>
         </main>
     )
 }

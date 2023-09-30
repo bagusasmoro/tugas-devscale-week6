@@ -1,9 +1,13 @@
 "use client";
 
+
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
+
 export const useLogin = () => {
+    const router = useRouter()
     const [loading, setLoading] = useState(false)
     const [loginData, setLoginData] = useState({
         email: "",
@@ -35,7 +39,7 @@ export const useLogin = () => {
         setLoading(false)
         toast.remove();
         toast.success("Login successfully")
-        console.log(data);
+        router.push("/dashboard");
     };
 
     return { loading, loginData, handleChange, handleSubmitLogin }

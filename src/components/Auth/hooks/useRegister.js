@@ -1,9 +1,12 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
+
 export const useRegister = () => {
+    const router = useRouter();
     const [registerData, setRegisterData] = useState({
         name: "",
         email: "",
@@ -32,6 +35,7 @@ export const useRegister = () => {
 
         toast.remove()
         toast.success(message);
+        router.push("/login");
     };
 
     return { registerData, handleChange, handleSubmitRegister }
